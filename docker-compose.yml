@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    image: yujunjie0603/pokemon-image:docker-compose
+    container_name: pokemon
+    ports:
+      - "3002:3000"
+    environment:
+      - SOURCE_DOCUMENT_ROOT=/var/www/html
+    volumes:
+      - ./:/var/www/html
+    build:
+      context: .
+      dockerfile: Dockerfile
